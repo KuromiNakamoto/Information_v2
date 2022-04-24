@@ -1,0 +1,119 @@
+<!--
+    Code by Minato Nankaji
+    Product : Info v2
+    Contact : 
+    - Facebook : https://www.facebook.com/Minato.Nankaji/
+    - Discord : 港 なんかじ#0001
+    Website : https://tokovn.com
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info (Version 2)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/form_v1.css">
+    <link rel="stylesheet" href="./assets/css/snowflake.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/plugins/jquery.min.js"></script>
+    <script src="./assets/js/plugins/sweetalert2.min.js"></script>
+</head>
+<body style="--data-image:url(../img/wp5493855.webp);">
+    <div id="loading" class="focused">
+            <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100"
+                viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                    <animateTransform 
+                        attributeName="transform" 
+                        attributeType="XML" 
+                        type="rotate"
+                        dur="1s" 
+                        from="0 50 50"
+                        to="360 50 50" 
+                        repeatCount="indefinite" 
+                    />
+                </path>
+            </svg>
+    </div>
+
+    <div class="snowflakes" aria-hidden="true" id="loadSnow"></div>
+
+    <div class="content">
+        <div class="flex-center" style="margin-top:4rem;">
+            <div class="card-user-v2">
+                <div class="card-content">
+                    <div class="flex-content">
+                        <div class="c-user-avatar">
+                            <div class="card-user-avatar" style="--avatar:url(../img/avatar-animate.gif);"></div>
+                        </div>
+                        <div class="__content">
+                            <h1 class="card-title">ĐOÀN BẢO <span class="card-title-regular">(港 なんかじ)</span></h1>
+                            <p class="card-info-text" style="margin-top:-0.3rem;">Developer - Discord Bot Coder</p>
+                            <div class="__button_list">
+                                <a href="https://www.facebook.com/Minato.Nankaji/" target="_blank"><div class="card-button-social" style="--bg-color:#007bff;--text-color:#fff;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div></a>
+                                <a href="https://www.youtube.com/channel/UCN8P_0MM7fbjpj_n1qnnoaQ" target="_blank"><div class="card-button-social" style="--bg-color:#dc3545;--text-color:#fff;">
+                                    <i class="fab fa-youtube"></i>
+                                </div></a>
+                                <a href="https://github.com/Anizer2509" target="_blank"><div class="card-button-social" style="--bg-color:#343a40;--text-color:#fff;">
+                                    <i class="fab fa-github"></i>
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-center" style="margin-top:2rem;">
+            <div class="card-user-v2">
+                <div class="card-content">
+                    <button class="card-button-switch focused" data-target="#profile_info">THÔNG TIN CÁ NHÂN</button>
+                    <button class="card-button-switch" data-target="#projects">DỰ ÁN CỦA TÔI</button>
+                    <button class="card-button-switch" data-target="#note">CHÚ THÍCH</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-center" style="margin-top:1rem;">
+            <div class="card-user-v2">
+                <div class="card-content">
+                    <div class="toggle-content focused" id="profile_info">
+                        <h2>Sơ lược về tôi</h2>
+                        <p class="card-text-left">Tôi tên là Bảo. Hiện đang là học sinh và là một Website Developer.</p>
+                        <br>
+                        <h2>Thông tin cá nhân</h2>
+                        <p class="card-text-left"><strong>Họ tên :</strong> Đoàn Gia Bảo</p>
+                        <p class="card-text-left"><strong>Sinh năm :</strong> 2009</p>
+                        <p class="card-text-left"><strong>Nghề nghiệp :</strong> Học sinh, Developer</p>
+                        <p class="card-text-left"><strong>Email :</strong> doangiabao2009@hotmail.com</p>
+                        <p class="card-text-left"><strong>Discord :</strong> 港 なんかじ#0001</p>
+                        <p class="card-text-left"><strong>Minecraft :</strong> DoraKunMCVN</p>
+                    </div>
+                    <div class="toggle-content" id="projects">
+                        <form id="project_find">
+                            <div class="form-group">
+                                <label>Project ID :</label>
+                                <input type="text" class="normal-input v3" maxlength="20" id="project_find_id">
+                            </div>
+                            <div class="form-group">
+                                <button class="form-submit" style="--default-bg:linear-gradient(to right, #034c99, #037dff);" id="project_find_submit">Tìm kiếm</button>
+                            </div>
+                            <div class="form-group">
+                                <p class="card-text" style="color: #dc3545;"><strong>* Note : </strong> Có một số project đang được viết nên khi search sẽ không có kết quả.</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="toggle-content" id="note">
+                        <p><strong>Bản quyền mã nguồn bởi Đoàn Bảo (Nankaji Minato).</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
